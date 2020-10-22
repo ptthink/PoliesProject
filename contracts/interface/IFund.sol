@@ -7,5 +7,13 @@ interface IFund {
 
     function injectProfitsAndFinish() external returns (bool);
 
-    function pick(address token, uint256 amount) external view returns (address);
+    function pick(address token, uint256 amount)
+        external
+        view
+        returns (address);
+
+    function withdrawProfit(
+        address token,
+        uint256 amount
+    ) external view returns (bool);
 }
