@@ -34,11 +34,10 @@ contract PoliesPlatform is IPoliesPlatform, Ownable {
         bytes32 name,
         bytes32 url1,
         bytes32 url2
-    ) external override view returns (address) {}
+    ) external view returns (address) {}
 
     function createFund(address token, uint256 amount)
         external
-        override
         view
         returns (bool)
     {}
@@ -47,5 +46,5 @@ contract PoliesPlatform is IPoliesPlatform, Ownable {
         uint256 fundId,
         address token,
         uint256 amount
-    ) external override view returns (bool) {}
+    ) external view returns (bool) {}
 }

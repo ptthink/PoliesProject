@@ -4,12 +4,29 @@ import "./IERC20.sol";
 import "./IInvestor.sol";
 import "./IFinanceOrg.sol";
 
-interface IPoliesPlatform is IInvestor,IFinanceOrg {
-    event FundRequestApproved(address indexed token,uint256 indexed requestId, uint256 amount);    
-    
-    function approveOrgRequest(uint requestId,bool pass) external view returns (bool);
+interface IPoliesPlatform {
+    event FundRequestApproved(
+        address indexed token,
+        uint256 indexed requestId,
+        uint256 amount
+    );
 
-    function approveFundRequest(uint requestId,bool pass) external view returns (bool);
+    function applyAsFinanceOrg(address financeAddress)
+        external
+        view
+        returns (address);
 
-    function updateFeeRate(uint investFeeRate,uint profitFeeRate) external returns (bool);
+    function approveOrgRequest(uint256 requestId, bool pass)
+        external
+        view
+        returns (bool);
+
+    function approveFundRequest(uint256 requestId, bool pass)
+        external
+        view
+        returns (bool);
+
+    function updateFeeRate(uint256 investFeeRate, uint256 profitFeeRate)
+        external
+        returns (bool);
 }
