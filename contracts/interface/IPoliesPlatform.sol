@@ -11,19 +11,14 @@ interface IPoliesPlatform {
         uint256 amount
     );
 
-    function applyAsFinanceOrg(address financeAddress)
-        external
-        view
-        returns (address);
+    function applyToBeAFinanceOrg(address financeOrgId) external returns (bool);
 
-    function approveOrgRequest(uint256 requestId, bool pass)
+    function approveOrgRequest(address financeOrg)
         external
-        view
         returns (bool);
 
     function approveFundRequest(uint256 requestId, bool pass)
         external
-        view
         returns (bool);
 
     function updateFeeRate(uint256 investFeeRate, uint256 profitFeeRate)
