@@ -5,7 +5,9 @@ import "./interface/IFinanceOrg.sol";
 import "./interface/IPoliesPlatform.sol";
 
 contract PoliesPlatform is IPoliesPlatform, Ownable {
-    uint256 _orgRegIdCursor;
+    uint256 private _orgRegIdCursor;
+    uint256 private _investFeeRate;
+    uint256 private _profitFeeRate;
     mapping(address => uint256) _orgs; // finance organization
 
     function approveOrgRequest(address financeOrg)
@@ -45,15 +47,11 @@ contract PoliesPlatform is IPoliesPlatform, Ownable {
         override
         onlyOwner
         returns (bool)
-    {}
-
-    function applyAsFinanceOrg(
-        address owner,
-        bytes32 name,
-        bytes32 url1,
-        bytes32 url2
-    ) external view returns (address) {}
-
+    {
+        _investFeeRate = investFeeRate;
+        _profitFeeRate = profitFeeRate;
+    } 
+ 
     function createFund(address token, uint256 amount)
         external
         view
