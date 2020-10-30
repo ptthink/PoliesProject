@@ -32,20 +32,11 @@ contract FinanceOrg is IFinanceOrg, Ownable {
     }
 
     function approveFinanceOrg() external override returns (bool) {
-        require(
-            _msgSender() == _platform,
-            "FinanceOrg:only platform can approve"
-        );
+        require(_msgSender() == _platform,"FinanceOrg:only platform can approve");
         _valid = true;
         _joinAt = block.timestamp;
         emit ApplicationPassed(address(this));
     }
-
-    function createFund(address token, uint256 amount)
-        external
-        override
-        returns (bool)
-    {}
 
     function getInfo()
         external

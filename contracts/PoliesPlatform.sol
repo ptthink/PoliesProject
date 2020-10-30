@@ -5,19 +5,14 @@ import "./interface/IFinanceOrg.sol";
 import "./interface/IPoliesPlatform.sol";
 
 contract PoliesPlatform is IPoliesPlatform, Ownable {
-    uint256 private _orgRegIdCursor;
+    uint256 private _orgRegIdCursor; // Automatic increase id of finance organization application
+    uint256 private _fundReqIdCursor;// Automatic increase id of fund application
     uint256 private _investFeeRate;
     uint256 private _profitFeeRate;
     mapping(address => uint256) _orgs; // finance organization
+    //mapping(address => mapping()) _orgs; // fund application
 
-    function approveOrgRequest(address financeOrg)
-        external
-        override
-        returns (bool)
-    {
-        IFinanceOrg(financeOrg).approveFinanceOrg();
-    }
-
+    //fund org address => application id ==> token address ==>
     function applyToBeAFinanceOrg(address financeOrg)
         external
         override
@@ -34,7 +29,33 @@ contract PoliesPlatform is IPoliesPlatform, Ownable {
         _orgs[financeOrg] = _orgRegIdCursor;
     }
 
-    function approveFundRequest(uint256 requestId, bool pass)
+    function approveOrgRequest(address financeOrg)
+        external
+        override
+        returns (bool)
+    {
+        require(_orgs[financeOrg] > 0, "invalid application org");
+        bool valid;
+
+        (, , , , , , , valid) = IFinanceOrg(financeOrg).getInfo();
+        require(valid != true, "already approved");
+
+        IFinanceOrg(financeOrg).approveFinanceOrg();
+    }
+
+    function applyFund(address token, uint256 amount)
+        external
+        override
+        returns (address)
+    {
+        address fundOrgAdrr = msg.sender;
+        bool valid;
+        (, , , , , , , valid) = IFinanceOrg(fundOrgAdrr).getInfo();
+        require(valid == true, "invlid finance org");
+
+    }
+
+    function approveFundRequest(address fundAddress, bool pass)
         external
         override
         view
@@ -50,13 +71,7 @@ contract PoliesPlatform is IPoliesPlatform, Ownable {
     {
         _investFeeRate = investFeeRate;
         _profitFeeRate = profitFeeRate;
-    } 
- 
-    function createFund(address token, uint256 amount)
-        external
-        view
-        returns (bool)
-    {}
+    }
 
     function withdrawProfit(
         uint256 fundId,
