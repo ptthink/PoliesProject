@@ -35,7 +35,7 @@ abstract contract ReentrancyGuard {
 
     uint256 private _status;
 
-    constructor () {
+    constructor () public {
         _status = _NOT_ENTERED;
     }
 

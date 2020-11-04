@@ -58,10 +58,11 @@ contract PoliesPlatform is IPoliesPlatform, Ownable {
     function approveFundRequest(address fundAddress, bool pass)
         external
         override
-        view
         onlyOwner
         returns (bool)
-    {}
+    {
+        return true;
+    }
 
     function updateFeeRate(uint256 investFeeRate, uint256 profitFeeRate)
         external

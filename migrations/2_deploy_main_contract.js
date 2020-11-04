@@ -1,8 +1,9 @@
 const PoliesPlatform = artifacts.require("PoliesPlatform");
 const SafeMath = artifacts.require("SafeMath");
+const { deployProxy } = require('@openzeppelin/truffle-upgrades');
 
-module.exports = function (deployer) {
+module.exports = async function (deployer) {
   deployer.deploy(SafeMath);
   deployer.link(SafeMath, PoliesPlatform);
-  deployer.deploy(PoliesPlatform);
+  await deployProxy(PoliesPlatform);
 };
