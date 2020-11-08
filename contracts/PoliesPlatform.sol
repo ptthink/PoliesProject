@@ -1,16 +1,22 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.8.0;
 import "./access/Ownable.sol";
+import "./interface/IFund.sol";
+import "./Fund.sol";
 import "./interface/IFinanceOrg.sol";
 import "./interface/IPoliesPlatform.sol";
 
 contract PoliesPlatform is IPoliesPlatform, Ownable {
     uint256 private _orgRegIdCursor; // Automatic increase id of finance organization application
-    uint256 private _fundReqIdCursor;// Automatic increase id of fund application
+    uint256 private _fundReqIdCursor; // Automatic increase id of fund application
     uint256 private _investFeeRate;
     uint256 private _profitFeeRate;
-    mapping(address => uint256) _orgs; // finance organization
-    //mapping(address => mapping()) _orgs; // fund application
+    mapping(address => uint256) _orgs; // finance organization,finance org contract --> orgId
+    mapping(uint256 => address) _fundApplications; // fund, application id --> fund contract address
+
+    function initialize() override public {
+        Ownable.initialize();
+    }
 
     //fund org address => application id ==> token address ==>
     function applyToBeAFinanceOrg(address financeOrg)
@@ -43,25 +49,33 @@ contract PoliesPlatform is IPoliesPlatform, Ownable {
         IFinanceOrg(financeOrg).approveFinanceOrg();
     }
 
-    function applyFund(address token, uint256 amount)
+    function applyFund(address token, uint256 applyAmount)
         external
         override
         returns (address)
     {
-        address fundOrgAdrr = msg.sender;
+        require(applyAmount > 0, "apply amount must gt 0");
+        address fundOrgAddr = msg.sender;
         bool valid;
-        (, , , , , , , valid) = IFinanceOrg(fundOrgAdrr).getInfo();
+        (, , , , , , , valid) = IFinanceOrg(fundOrgAddr).getInfo();
         require(valid == true, "invlid finance org");
 
+        if (token != address(0)) {
+            require(IERC20(token).totalSupply() > 0, "invalid erc20 token");
+        }
+
+        Fund fund = new Fund(address(this), fundOrgAddr, token, applyAmount);
+        _fundReqIdCursor = _fundReqIdCursor + 1;
+        _fundApplications[_fundReqIdCursor] = address(fund);
     }
 
-    function approveFundRequest(address fundAddress, bool pass)
+    function approveFundRequest(address fundAddress)
         external
         override
         onlyOwner
         returns (bool)
     {
-        return true;
+        return IFund(fundAddress).allowToInvest();
     }
 
     function updateFeeRate(uint256 investFeeRate, uint256 profitFeeRate)

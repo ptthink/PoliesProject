@@ -22,24 +22,21 @@ interface IPoliesPlatform {
     /// @param amount Amount of funds to be applied for
     /// @return The fund address
     /// @dev Invalid financial organization will failed
-    function applyFund(address token,uint256 amount) external returns (address);
-
+    function applyFund(address token, uint256 amount)
+        external
+        returns (address);
 
     /// @notice Approve applications from financial organization
     /// @param financeOrg Finance organization address
     /// @return Approve result of financial organization application
     /// @dev Only platform owner can approve
-    function approveOrgRequest(address financeOrg)
-        external
-        returns (bool);
+    function approveOrgRequest(address financeOrg) external returns (bool);
 
     /// @notice Approve funding applications from financial organization
     /// @param fundAddress The fund contract address
     /// @return Submit successful or failed
     /// @dev Only platform owner can approve
-    function approveFundRequest(address fundAddress, bool pass)
-        external
-        returns (bool);
+    function approveFundRequest(address fundAddress) external returns (bool);
 
     /// @notice Update the fee rate
     /// @param investFeeRate Fee rate of invest

@@ -1,0 +1,459 @@
+{
+  "manifestVersion": "3.1",
+  "impls": {
+    "26a07bc3c2f1f5cfd190a9ab02e13082575dc7309b4c550aeb71fabf7149ea0f": {
+      "address": "0xe172da92a51706fA36fb23DC2234D810E6177C58",
+      "txHash": "0x965b4916d3a4fddff5ad7a9bf2bba476e5a5263d44585f808439db7d3ce2ae38",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Ownable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "access/Ownable.sol:20"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgRegIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:10"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundReqIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:11"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_investFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:12"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_profitFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:13"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgs",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "PoliesPlatform.sol:14"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundApplications",
+            "type": "t_mapping(t_uint256,t_address)",
+            "src": "PoliesPlatform.sol:15"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)"
+          },
+          "t_address": {
+            "label": "address"
+          }
+        }
+      }
+    },
+    "aab45c5f8e732c7629d370c4c50df4209f3f0ad15b65865eb06c40e07c057589": {
+      "address": "0x445a09ac69C7Dc0Ac94997631b507A5D254A2667",
+      "txHash": "0xe674ad35ff2dc2c010b32c4a6191267292ec43d3a8badcfc7a603c94f5585a6d",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Ownable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "access/Ownable.sol:20"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgRegIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:10"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundReqIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:11"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_investFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:12"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_profitFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:13"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgs",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "PoliesPlatform.sol:14"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundApplications",
+            "type": "t_mapping(t_uint256,t_address)",
+            "src": "PoliesPlatform.sol:15"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)"
+          },
+          "t_address": {
+            "label": "address"
+          }
+        }
+      }
+    },
+    "8f518295ac17516bd9563ecdb54ced84ddae602deaa7e6abc0a017df92b5a830": {
+      "address": "0x5A909F4C2BA5bea437a8E015e3c479A88f60598B",
+      "txHash": "0x3393200358de0c3ff3f1342b1ff38bc2f500adbfdda88ece114e1b874e02ae87",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Ownable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "access/Ownable.sol:20"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_platform",
+            "type": "t_address",
+            "src": "FinanceOrg.sol:9"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_name",
+            "type": "t_bytes32",
+            "src": "FinanceOrg.sol:10"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_url1",
+            "type": "t_bytes32",
+            "src": "FinanceOrg.sol:11"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_url2",
+            "type": "t_bytes32",
+            "src": "FinanceOrg.sol:12"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_level",
+            "type": "t_uint256",
+            "src": "FinanceOrg.sol:13"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_holdFunds",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "FinanceOrg.sol:14"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_profits",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "FinanceOrg.sol:15"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_investReturnPercent",
+            "type": "t_uint256",
+            "src": "FinanceOrg.sol:16"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_createAt",
+            "type": "t_uint256",
+            "src": "FinanceOrg.sol:17"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_joinAt",
+            "type": "t_uint256",
+            "src": "FinanceOrg.sol:18"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_valid",
+            "type": "t_bool",
+            "src": "FinanceOrg.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_bytes32": {
+            "label": "bytes32"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "0590d246385cc9ea0c170c6413f187176c52385b7f4f6ae4cfdcee092d517634": {
+      "address": "0xcD50e99f3193C6f2a66d7C56FC82Aa4De1BA4B78",
+      "txHash": "0xeb45a3564dde276fec30f6ffc5289aa026edcbd16415e3e5ff4c2854325e2b77",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Ownable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "access/Ownable.sol:20"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgRegIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:10"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundReqIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:11"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_investFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:12"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_profitFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:13"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgs",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "PoliesPlatform.sol:14"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundApplications",
+            "type": "t_mapping(t_uint256,t_address)",
+            "src": "PoliesPlatform.sol:15"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)"
+          },
+          "t_address": {
+            "label": "address"
+          }
+        }
+      }
+    },
+    "007af4d08a8243b635da41055b9ab8878bdbbda0f0d811ca7a32291dbb8aca7b": {
+      "address": "0x26Dfd335f00A6D96B541C7DBAa4d62aBE471E5Ea",
+      "txHash": "0xbab57b62533a7b570ad4a1259bedcd3a6abbff359f8aa409d5c5cca68a214d76",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Ownable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "access/Ownable.sol:20"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_platform",
+            "type": "t_address",
+            "src": "FinanceOrg.sol:9"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_name",
+            "type": "t_bytes32",
+            "src": "FinanceOrg.sol:10"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_url1",
+            "type": "t_bytes32",
+            "src": "FinanceOrg.sol:11"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_url2",
+            "type": "t_bytes32",
+            "src": "FinanceOrg.sol:12"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_level",
+            "type": "t_uint256",
+            "src": "FinanceOrg.sol:13"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_holdFunds",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "FinanceOrg.sol:14"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_profits",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "FinanceOrg.sol:15"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_investReturnPercent",
+            "type": "t_uint256",
+            "src": "FinanceOrg.sol:16"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_createAt",
+            "type": "t_uint256",
+            "src": "FinanceOrg.sol:17"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_joinAt",
+            "type": "t_uint256",
+            "src": "FinanceOrg.sol:18"
+          },
+          {
+            "contract": "FinanceOrg",
+            "label": "_valid",
+            "type": "t_bool",
+            "src": "FinanceOrg.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_bytes32": {
+            "label": "bytes32"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "223ec3da0b39da03e4e4dfee52063ac502923147d6aede41adcf6f8c803a9130": {
+      "address": "0x98Ec834F71b1614bDf9B8782a806a30De4A48CE7",
+      "txHash": "0xa4789ef3388d7bd0966a16fe76a34dbc10957ea459d284fb9d8b85058fdd8e6c",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Ownable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "access/Ownable.sol:20"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgRegIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:10"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundReqIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:11"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_investFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:12"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_profitFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:13"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgs",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "PoliesPlatform.sol:14"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundApplications",
+            "type": "t_mapping(t_uint256,t_address)",
+            "src": "PoliesPlatform.sol:15"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)"
+          },
+          "t_address": {
+            "label": "address"
+          }
+        }
+      }
+    }
+  },
+  "admin": {
+    "address": "0x87952290928891aBeBc67aB5604A0EeA05C57Db0",
+    "txHash": "0x62b17635e511f7828f9801e453ed3e7db0f854cbce9fc0d9c668bcf3211812f3"
+  }
+}

@@ -18,7 +18,7 @@ contract FinanceOrg is IFinanceOrg, Ownable {
     uint256 private _joinAt;
     bool private _valid;
 
-    constructor(
+    function initialize(
         bytes32 name,
         bytes32 url1,
         bytes32 url2,
@@ -29,10 +29,14 @@ contract FinanceOrg is IFinanceOrg, Ownable {
         _name = name;
         _url1 = url1;
         _url2 = url2;
+        _createAt = block.timestamp;
     }
 
     function approveFinanceOrg() external override returns (bool) {
-        require(_msgSender() == _platform,"FinanceOrg:only platform can approve");
+        require(
+            _msgSender() == _platform,
+            "FinanceOrg:only platform can approve"
+        );
         _valid = true;
         _joinAt = block.timestamp;
         emit ApplicationPassed(address(this));

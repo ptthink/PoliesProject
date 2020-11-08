@@ -14,7 +14,33 @@ contract Fund is IFund {
     uint256 _applyAmount;
     uint256 _realAmount;
     uint256 _profit;
+    bool _forzen;
+    bool _valid;
     mapping(address => uint256) _invests;
+
+    /**
+     * @dev Throws if called by any account other than the fund owner.
+     */
+    modifier onlyOwnerFundOrg() {
+        require(_fundOrg == msg.sender, "Fund:only owner org can call it");
+        _;
+    }
+
+    /**
+     * @dev Throws if called by any account other than the platform.
+     */
+    modifier onlyPlatform() {
+        require(_platform == msg.sender, "Fund:only platform org can call it");
+        _;
+    }
+
+    /**
+     * @dev Throws if called when fund forzen.
+     */
+    modifier onlyNotForzen() {
+        require(_forzen == false, "Fund:forzen");
+        _;
+    }
 
     constructor(
         address platform,
@@ -35,28 +61,50 @@ contract Fund is IFund {
         _applyAmount = applyAmount;
     }
 
+    function allowToInvest() external override onlyPlatform returns (bool) {
+        _valid = true;
+    }
+
+    function forzen() external override onlyPlatform returns (bool) {
+        if (_forzen != true) _forzen = true;
+    }
+
+    function unforzen() external override onlyPlatform returns (bool) {
+        if (_forzen == true) _forzen = false;
+    }
+
     function invest(
         address investor,
         address token,
         uint256 amount
-    ) external override returns (bool) {
+    ) external override onlyNotForzen returns (bool) {
+        require(_valid == true, "can not invest before approve");
         require(_token == token, "invalid token");
         uint256 investAmount = _invests[investor];
         investAmount = investAmount.add(amount);
         _invests[investor] = investAmount;
     }
 
-    function injectProfitsAndFinish() external override returns (bool) {}
+    function injectProfitsAndFinish()
+        external
+        override
+        onlyOwnerFundOrg
+        onlyNotForzen
+        returns (bool)
+    {}
 
     function pick(address token, uint256 amount)
         external
         override
+        onlyOwnerFundOrg
+        onlyNotForzen
         returns (address)
     {}
 
     function withdrawProfit(address token, uint256 amount)
         external
         override
+        onlyNotForzen
         returns (bool)
     {}
 }
