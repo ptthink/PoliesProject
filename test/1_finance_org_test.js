@@ -22,9 +22,7 @@ contract('FinanceOrg', async accounts => {
     assert.isTrue(orgInfo[3].includes(url2), "url2 check failed");
     assert.equal(orgInfo[4], 0, "level check failed");
     assert.isTrue(orgInfo[5] > 0, "createAt check failed");
-    console.log("orgInfo[6]",orgInfo[6]);
     assert.isTrue(orgInfo[6].eq(web3.utils.toBN(0)), "joinAt check failed");
     assert.equal(orgInfo[7], false, "valid check failed");
-
   });
 });

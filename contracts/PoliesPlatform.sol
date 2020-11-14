@@ -11,10 +11,10 @@ contract PoliesPlatform is IPoliesPlatform, Ownable {
     uint256 private _fundReqIdCursor; // Automatic increase id of fund application
     uint256 private _investFeeRate;
     uint256 private _profitFeeRate;
-    mapping(address => uint256) _orgs; // finance organization,finance org contract --> orgId
-    mapping(uint256 => address) _fundApplications; // fund, application id --> fund contract address
+    mapping(address => uint256) private _orgs; // finance organization,finance org contract --> orgId
+    mapping(uint256 => address) private _fundApplications; // fund, application id --> fund contract address
 
-    function initialize() override public {
+    function initialize() public override {
         Ownable.initialize();
     }
 
@@ -33,6 +33,10 @@ contract PoliesPlatform is IPoliesPlatform, Ownable {
 
         _orgRegIdCursor = _orgRegIdCursor + 1;
         _orgs[financeOrg] = _orgRegIdCursor;
+    }
+
+    function getOrgId(address financeOrg) external view returns (uint256) {
+        return _orgs[financeOrg];
     }
 
     function approveOrgRequest(address financeOrg)

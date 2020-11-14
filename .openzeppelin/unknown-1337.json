@@ -388,8 +388,72 @@
       }
     },
     "223ec3da0b39da03e4e4dfee52063ac502923147d6aede41adcf6f8c803a9130": {
-      "address": "0x98Ec834F71b1614bDf9B8782a806a30De4A48CE7",
-      "txHash": "0xa4789ef3388d7bd0966a16fe76a34dbc10957ea459d284fb9d8b85058fdd8e6c",
+      "address": "0xA039C2e55dB16317F0908f2194D33d6299847DB2",
+      "txHash": "0x955c7bfe296e0a332a34d7ccd1bfa62b37a391380cf3bf2c61a7835682d66c0b",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Ownable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "access/Ownable.sol:20"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgRegIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:10"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundReqIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:11"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_investFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:12"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_profitFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:13"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgs",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "PoliesPlatform.sol:14"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundApplications",
+            "type": "t_mapping(t_uint256,t_address)",
+            "src": "PoliesPlatform.sol:15"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)"
+          },
+          "t_address": {
+            "label": "address"
+          }
+        }
+      }
+    },
+    "a3ff475fc86d456234b75f5f44a588026fd9aa944ee6c438efcc59a94c301ab2": {
+      "address": "0x1418dF22bF537eE0ce333D1b8a8D3Ef8F6c97AAc",
+      "txHash": "0x7f63b8483b9562815de30d113c1109ec488c59590d61dc50609cf54775707b3a",
       "layout": {
         "storage": [
           {
@@ -453,7 +517,7 @@
     }
   },
   "admin": {
-    "address": "0x87952290928891aBeBc67aB5604A0EeA05C57Db0",
-    "txHash": "0x62b17635e511f7828f9801e453ed3e7db0f854cbce9fc0d9c668bcf3211812f3"
+    "address": "0x7a869390bb5939C019EFe3ceb956c129A8854B7D",
+    "txHash": "0xf98194cb8a30835a337efca8d6083eb312743a9545fbd5b6454f1f2b7e46972e"
   }
 }
