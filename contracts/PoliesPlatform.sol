@@ -42,6 +42,7 @@ contract PoliesPlatform is IPoliesPlatform, Ownable {
     function approveOrgRequest(address financeOrg)
         external
         override
+        onlyOwner
         returns (bool)
     {
         require(_orgs[financeOrg] > 0, "invalid application org");

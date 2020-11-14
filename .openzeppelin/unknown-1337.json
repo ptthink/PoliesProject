@@ -514,6 +514,70 @@
           }
         }
       }
+    },
+    "9dd7f64b48166f0ef2c897ba39b384734f5db0cb6b6f5566d0cf214ada50d010": {
+      "address": "0xfa332D5763fc3A594fA8E77506658C9c4c5f36a5",
+      "txHash": "0x03d5776880fe819d969c1c5e27d19556afd2913b7c2d1f643e494c66bea23a65",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Ownable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "access/Ownable.sol:20"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgRegIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:10"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundReqIdCursor",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:11"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_investFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:12"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_profitFeeRate",
+            "type": "t_uint256",
+            "src": "PoliesPlatform.sol:13"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_orgs",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "PoliesPlatform.sol:14"
+          },
+          {
+            "contract": "PoliesPlatform",
+            "label": "_fundApplications",
+            "type": "t_mapping(t_uint256,t_address)",
+            "src": "PoliesPlatform.sol:15"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)"
+          },
+          "t_address": {
+            "label": "address"
+          }
+        }
+      }
     }
   },
   "admin": {
